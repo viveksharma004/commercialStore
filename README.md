@@ -1,6 +1,20 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Commercial Store React App
+
+This is a simple commercial store application built with React. It fetches product data from an external API and displays it on the home page. A cart page is available to manage added products.
+
+## Features
+
+- Fetches product data from an external API
+- Displays products on the home page
+- Allows adding and removing products from the cart
+- Displays the cart page for cart management
+
+## Usage
+
+1. Clone the repository
+   ```bash
+   $ git clone https://github.com/viveksharma/commercialStore.git
 
 ## Available Scripts
 
