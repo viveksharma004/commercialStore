@@ -2,9 +2,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {FaShoppingCart } from "react-icons/fa"
 import logo from "./logo.png"
+import { CiLight } from "react-icons/ci";
+import { CiDark } from "react-icons/ci";
+
+
 import { useSelector } from 'react-redux'
-const Navbar = () => {
+const Navbar = ({props}) => {
+  const {isDarkMode,toggleTheme}=props;
+  // console.log(isDarkMode);
   const cart=useSelector((state)=>state.cart.cartItems);
+  const rotateHandler=(e)=>{
+    e.preventDefault();
+  }
+ 
   return (
     <div >
       <nav className="flex justify-between items-center h-20 max-w-6xl mx-auto">
@@ -32,6 +42,11 @@ const Navbar = () => {
                   }
               </div>
             </NavLink>
+            <button onClick={toggleTheme}>
+                {isDarkMode ? <CiLight  className='text-xl text-yellow-200 hover:rotate-180' onClick={rotateHandler}/>
+                            : <CiDark className='text-xl text-blue-200 hover:rotate-360 transition-transform duration-400 delay-500'onClick={rotateHandler}/>
+}
+            </button>
           </div>
       </nav>
     </div>

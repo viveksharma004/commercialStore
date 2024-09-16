@@ -2,6 +2,8 @@ import React from 'react';
 import {useState,useEffect} from "react";
 import Spinner from "../../src/components/Spinner"
 import Product from '../components/Product'
+// import { RingLoader } from "react-spinners";
+
 
 const Home = () => {
     const [data,setData]= useState([]);
@@ -26,9 +28,9 @@ const Home = () => {
   // console.log("Loading data after all actions performed");
   // console.log(data);
   return (
-    <div>
+    <div className=''>
         {
-        loading ? <Spinner />  :
+        loading ? <Spinner/>  :
         data.length > 0 ?
         (<div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5
         gap-y-8 max-w-6xl p-6 mx-auto my-7 min-h-[80vh]">

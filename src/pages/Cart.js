@@ -3,7 +3,8 @@ import {useSelector} from "react-redux"
 import CartItem from "../components/CartItem"
 import {Link} from "react-router-dom"
 
-const Cart = () => {
+const Cart = ({props}) => {
+  const {isDarkMode}=props;
   const cart= useSelector((state)=>state.cart.cartItems);
   // console.log("Logging the cart values")
   const mapOfItems= useSelector((state)=>state.cart.mapOfItems);
@@ -25,7 +26,7 @@ const Cart = () => {
       <div className="lg:w-[70%]">
         {
           cart.map( (item,index) => {
-            return <CartItem key={item.id} item={item} itemIndex={index} />
+            return <CartItem key={item.id} item={item} itemIndex={index} isDarkMode={isDarkMode}/>
           } )
         }
       </div>
@@ -35,14 +36,14 @@ const Cart = () => {
         <div className="mt-20">
           <p className="text-xl text-[#166534] uppercase font-[600]">Your Cart</p>
           <p className="text-5xl font-[600] text-[#15803d] uppercase mb-4">Summary</p>
-          <p className="font-[600] text-xl text-slate-700">
+          <p className={`font-[600] text-xl ${isDarkMode?"text-slate-50":"text-slate-700"} `}>
             Total Items: <span className="font-normal">{cart.length}</span>
           </p>
         </div>
 
         <div className="mb-20">
-          <p className="text-slate-700 text-xl font-[600] mb-5 ">Total Amount:
-            <span className="font-bold ml-2 text-black">${cartPrice.toFixed(2)}</span>
+          <p className={`${isDarkMode?"text-slate-200":"text-slate-700"} text-xl font-[600] mb-5 `}>Total Amount:
+            <span className={`font-bold ml-2 ${isDarkMode?"text-white":"text-black"}`}>${cartPrice.toFixed(2)}</span>
           </p>
           <button className="text-lg w-full py-2.5 rounded-lg font-bold text-white bg-[#15803d]
           border-2 border-[#15803d] hover:bg-white hover:text-[#15803d] transition-all duration-300 ease-in">
