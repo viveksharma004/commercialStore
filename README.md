@@ -10,6 +10,14 @@ This is a simple commercial store application built with React. It fetches produ
 - Allows adding and removing products from the cart
 - Displays the cart page for cart management
 
+## HomePage
+   ![Screenshot of Homepage section](/HomeLight.png)
+## CartSection
+   ### Light Mode
+   ![Screenshot of the cart section Light](/cartLight.png)
+   ### Dark Mode
+   ![Screenshot of the cart section Light](/cartdark.png)
+
 ## Usage
 
 1. Clone the repository
@@ -19,6 +27,7 @@ This is a simple commercial store application built with React. It fetches produ
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm install` 
 
 ### `npm start`
 
